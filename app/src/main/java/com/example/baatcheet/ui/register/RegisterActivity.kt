@@ -1,4 +1,4 @@
-package com.example.baatcheet
+package com.example.baatcheet.ui.register
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,9 +6,10 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.baatcheet.data.repository.AuthViewModel
 import com.example.baatcheet.databinding.ActivityRegisterBinding
+import com.example.baatcheet.ui.chat.ChatListActivity
+import com.example.baatcheet.ui.login.LoginActivity
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -40,7 +41,7 @@ class RegisterActivity : AppCompatActivity() {
         viewModel.authResult.observe(this) { (success, message) ->
             if (success) {
                 Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, ChatListActivity::class.java))
                 finish()
             } else {
                 Toast.makeText(this, message, Toast.LENGTH_SHORT).show()

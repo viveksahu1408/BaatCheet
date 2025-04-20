@@ -1,8 +1,9 @@
-package com.example.baatcheet
+package com.example.baatcheet.ui.chat
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.baatcheet.data.model.Conversation
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 

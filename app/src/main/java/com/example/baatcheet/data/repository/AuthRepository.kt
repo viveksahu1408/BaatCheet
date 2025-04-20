@@ -1,5 +1,6 @@
-package com.example.baatcheet
+package com.example.baatcheet.data.repository
 
+import com.example.baatcheet.data.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -7,7 +8,12 @@ class AuthRepository {
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
 
-    fun registerUser(email: String, password: String, username: String, callback: (Boolean, String?) -> Unit) {
+    fun registerUser(
+        email: String,
+        password: String,
+        username: String,
+        callback: (Boolean, String?) -> Unit
+    ) {
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 val uid = auth.currentUser!!.uid

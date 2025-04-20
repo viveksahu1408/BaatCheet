@@ -1,4 +1,4 @@
-package com.example.baatcheet
+package com.example.baatcheet.ui.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,8 +6,9 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.baatcheet.data.repository.AuthViewModel
+import com.example.baatcheet.ui.chat.ChatListActivity
+import com.example.baatcheet.ui.register.RegisterActivity
 import com.example.baatcheet.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -33,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
             if (success) {
                 Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
                 // Navigate to chat screen
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, ChatListActivity::class.java))
                 finish()
             } else {
                 Toast.makeText(this, message, Toast.LENGTH_SHORT).show()

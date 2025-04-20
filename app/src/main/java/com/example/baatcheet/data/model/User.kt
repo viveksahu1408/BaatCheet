@@ -1,4 +1,4 @@
-package com.example.baatcheet
+package com.example.baatcheet.data.model
 
 data class User(
     val uid: String = "",

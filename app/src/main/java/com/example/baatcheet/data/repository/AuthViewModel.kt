@@ -1,4 +1,4 @@
-package com.example.baatcheet
+package com.example.baatcheet.data.repository
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
